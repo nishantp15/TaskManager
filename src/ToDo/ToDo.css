@@ -1,0 +1,289 @@
+#ToDoMain{
+    width: 90%;
+    margin: auto;
+    border-radius: 40px;
+    background-color: rgba(8, 68, 199, 0.197);
+    /* border: 1px solid red; */
+}
+#Dashboard{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* margin: auto; */
+    /* border: 1px solid red; */
+}
+#Dashbord-Level2Div{
+    width: 48%;
+    border-radius: 20px;
+    height: 300px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+        /* border: 1px solid red; */
+    background-color: rgb(11, 8, 60);
+}
+#timeAndDateDiv{
+    width: 95%;
+    border: 1px solid red;
+    margin: auto;
+    color: white;
+}
+#Actions{
+    width: 95%;
+    margin: auto;
+    /* margin-top: 20px; */
+    /* display: flex; */
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    border-radius: 20px;
+    /* background-color: rgb(11, 8, 60); */
+    padding-bottom: 20px;
+    /* border: 1px solid red; */
+}
+#Nav{
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#Nav-Right{
+    display: flex;
+    width: 500px;
+    color: white;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: space-around;
+}
+#toggle-theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    justify-content: space-between;
+}
+#AddTask{
+    /* border: 1px solid red; */
+    text-align: left;
+    width: 100%;
+}
+form{
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    height: 30px;
+    justify-items: space-between;
+    align-items: center;
+}
+
+input{
+    height: 28px;
+    outline: none;
+    border: none;
+    width: 60%;
+}
+form button{
+    width: 30%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(253, 123, 123);
+}
+#filters{
+    /* display: flex; */
+    width: 100%;
+    text-align: left;
+    align-items: center;
+}
+
+#subfilter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+#Stats{
+    /* border: 1px solid red; */
+    width: 48%;
+    height: 300px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 20px;
+    background-color: rgb(50, 7, 80);
+}
+#Stats>h3{
+    text-align: left;
+    margin-top: -10px;
+    margin-left: 20px;
+}
+#Sub-Stats{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#Chart1{
+    /* border: 1px solid red; */
+    background-color: white;
+    border-radius: 20px;
+    width: 45%;
+}
+table{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th{
+    color: white;
+    font-weight: 600;
+    background-color: rgb(110, 32, 13);
+}
+tr:nth-child(odd){
+    background-color: white;
+}
+tr:nth-child(even){
+    background-color: rgb(217, 214, 214);
+}
+td{
+    max-width: fit-content;
+}
+td:nth-child(1){
+    width: 6%;
+    /* border: 1px solid red; */
+}
+td:nth-child(2){
+    text-align: left;
+    padding-left: 50px
+}
+td:nth-child(3){
+    width: 10%;
+    /* border: 1px solid red; */
+}
+td:nth-child(5),td:nth-child(6){
+    width: 12%;
+}
+td:nth-child(4){
+    width: 15%;
+}
+td>button{
+    cursor: pointer;
+}
+td:nth-child(4)>button{
+    width: 90%;
+}
+h4{
+    margin-left:5% ;
+    text-align: left;
+}
+td:nth-child(4) button{
+    background-color: rgb(48, 129, 124);
+    color: white;
+    border: none;
+    min-height: 24px;
+    border-radius: 5px;
+}
+td:nth-child(5) button{
+    background-color: rgb(1, 120, 205);
+    color: white;
+    border: none;
+    min-height: 24px;
+    border-radius: 5px;
+}
+td:nth-child(6) button{
+    background-color: rgb(205, 11, 1);
+    color: white;
+    border: none;
+    min-height: 24px;
+    border-radius: 5px;
+}
+td:nth-child(6) button:hover{
+    background-color: rgb(99, 12, 7);
+}
+td:nth-child(4) button:hover{
+    background-color: rgb(30, 77, 73);
+    ;
+}
+td:nth-child(5) button:hover{
+    background-color: rgb(10, 55, 88);
+}
+#ViewAndEditTaskDiv{
+    width: 100%;
+    height: 100px;
+    border: 1px solid red;
+}
+#paginate{
+    width: 16%;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+#paginate button{
+    width: 48%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 29px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
