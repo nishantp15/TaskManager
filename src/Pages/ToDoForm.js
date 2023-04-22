@@ -4,6 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import "./ToDo.css";
 
 Chart.register(Tooltip, Title, ArcElement, Legend);
+
 function ToDoForm() {
   let initData = { status: false, data: "" };
 

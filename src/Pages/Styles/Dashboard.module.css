@@ -1,0 +1,265 @@
+.DashboardContainerMain {
+  width: 100%;
+  background-color: rgba(9, 82, 142, 0.681);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.DashboardContainerLeft,
+.DashboardContainerRight {
+  width: 49%;
+  border: 1px solid red;
+  /* height: 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.DashboardUserControlMain,
+.DataAndStatDisplay {
+  /* border: 1px solid red; */
+  width: 100%;
+  border-radius: 10px;
+  height: 22vw;
+  background-color: rgb(41, 40, 73);
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.UserNameAndGeneralDetailsBox {
+  border-bottom: 1px solid rgb(175, 176, 176);
+  width: 100%;
+  height: 4.5vw;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.UserNameBox {
+  /* border: 1px solid red; */
+  width: 40%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.UserNameBox > h2 {
+  margin: 0;
+  color: white;
+}
+
+.DateTimeAndTempDisplayBox {
+  /* border: 1px solid red; */
+  width: 60%;
+  display: flex;
+}
+
+.DateAndTimeDisplayBox {
+  /* border: 1px solid red; */
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.DateAndTimeDisplayBox > p {
+  margin: 0;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.DateAndTimeDisplayBox > p:nth-child(2) {
+  font-size: 1rem;
+}
+
+.TempDisplayBox {
+  /* border: 1px solid red; */
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.TempDisplayBox > div {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+.TempDisplayBox > div > img {
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid red; */
+
+  /* aspect-ratio: 1.5; */
+}
+
+.TempDisplayBox > p {
+  margin: 0;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.AddTaskAndOtherDetailsBox {
+  /* border: 1px solid red; */
+  margin-top: 0.4vw;
+  display: flex;
+}
+
+.AddTaskAndOtherDetailsLeftBox,
+.AddTaskAndOtherDetailsRightBox{
+    height: 15vw;
+}
+
+.AddTaskAndOtherDetailsLeftBox {
+  /* border: 1px solid red; */
+  width: 60%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.AddTaskAndOtherDetailsLeftBox > input,
+.AddTaskAndOtherDetailsLeftBox > textarea {
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  background-color: rgb(64, 62, 86);
+  border-radius: 5px;
+  border: none;
+}
+
+.AddTaskAndOtherDetailsLeftBox > input:focus,
+.AddTaskAndOtherDetailsLeftBox > textarea:focus {
+  border: 1px solid rgb(195, 192, 217);
+  outline: none;
+}
+
+.AddTaskAndOtherDetailsLeftBox > textarea {
+  height: 12vw;
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+.AddTaskAndOtherDetailsRightBox {
+  /* border: 1px solid red; */
+  width: 40%;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.AddTaskAndOtherDetailsRightBox > button:not(:last-child),
+.AddTaskAndOtherDetailsRightBox > select {
+  width: 100%;
+  border: none;
+  height: 2vw;
+  color: white;
+  background-color: rgb(64, 62, 86);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.AddTaskAndOtherDetailsRightBox > button:not(:last-child):active {
+  background-color: rgb(94, 93, 115);
+}
+
+.AddTaskButton {
+  background-color: rgb(132, 74, 127);
+  width: 100%;
+  border: none;
+  height: 2.5vw;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.AddTaskButton:active{
+    background-color: rgb(201, 155, 197);
+}
+
+.DashboardTaskDisplayMainBox{
+    width: 100%;
+    border-radius: 10px;
+    height: 22vw;
+    background-color: rgb(41, 40, 73);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.TaskDisplayHeader{
+    border-bottom: 1px solid white;
+    padding: 5px 10px;
+
+}
+
+.TaskDisplayHeader>h3{
+    margin: 0px;
+    color: white;
+    text-align: left;
+}
+
+.TaskDisplayBox{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TaskCard{
+    border: 1px solid blue;
+    width: 98%;
+    height: 4vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.TaskCompletedMarkerBox{
+    width: 8%;
+    height: 100%;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MarkAsCompletedWithoutCheck{
+    display: none;
+}
+
+.MarkAsCompletedWithCheck{
+    opacity: 0;
+    display: none;
+}
+
+/* .MarkAsCompletedWithCheck:hover{
+
+} */
+
+.TaskDetails{
+    border: 1px solid red;
+    height: 100%;
+    width: 70%;
+}
+
+.TaskMarkImpOrDeleteActions{
+    border: 1px solid red;
+    width: 19%;
+}

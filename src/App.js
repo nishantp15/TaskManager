@@ -1,11 +1,14 @@
-import ToDoForm from './ToDo/ToDoForm';
-import './App.css';
+import Navbar from "./Components/Navbar";
+import ToDoForm from "./Pages/ToDoForm";
+import "./App.css";
+import Dashboard from "./Pages/Dashboard";
 
 function App() {
-  
   return (
     <div className="App">
-        <ToDoForm/>
+      <Navbar />
+      <Dashboard/>
+      <ToDoForm />
     </div>
   );
 }
