@@ -1,0 +1,122 @@
+.TaskCard {
+  /* border: 1px solid blue; */
+  width: 99%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 4px;
+  padding: 2px 0px;
+  background-color: rgb(64, 62, 86);
+  border-radius: 5px;
+}
+
+.TaskCompletedMarkerBox {
+  width: 6%;
+  /* height: 100%; */
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.MarkAsCompletedWithoutCheck,
+.MarkAsCompletedWithCheck {
+  color: aqua;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.MarkAsCompletedWithCheck {
+  opacity: 0;
+  position: absolute;
+}
+
+.MarkAsCompletedWithoutCheck:hover {
+  opacity: 0;
+}
+
+.MarkAsCompletedWithCheck:hover {
+  opacity: 1;
+}
+
+.TaskDetails {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.TaskDetails1 {
+  /* border: 1px solid red; */
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TaskDetails1,
+.TaskDetails2 {
+  padding: 2px 0px;
+  box-sizing: border-box;
+}
+
+.TaskDetails1 > p {
+  margin: 0;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.TaskDetails2 {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.TaskDetails2 > p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgb(117, 201, 208);
+  /* margin-right: 10px; */
+  text-align: left;
+}
+
+.CardDot,
+.BellIcon,
+.NoteIcon,
+.AttachmentIcon {
+  margin: 0;
+  font-size: large;
+  color: rgb(124, 210, 218);
+}
+
+.TaskMarkImpOrDeleteActions {
+  /* border: 1px solid red; */
+  width: 21%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  flex-wrap: wrap;
+}
+
+.DeleteTask,
+.EditTask,
+.MarkImportant {
+  color: rgb(163, 220, 251);
+  cursor: pointer;
+}
+
+.EditTask:hover {
+  color: rgb(98, 247, 108);
+}
+
+.DeleteTask:hover {
+  color: rgb(249, 72, 72);
+}

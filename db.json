@@ -1,69 +1,164 @@
 {
   "todo": [
     {
-      "status": true,
-      "data": "Assignments",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 1
     },
     {
-      "status": false,
-      "data": "Card bill payment",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 2
     },
     {
-      "status": true,
-      "data": "Electricity Bill Payment",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 3
     },
     {
-      "status": false,
-      "data": "Test 1",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 4
     },
     {
-      "status": false,
-      "data": "Test 2",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 5
     },
     {
-      "status": false,
-      "data": "Test 3",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 6
     },
     {
-      "status": false,
-      "data": "Test 4",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"19 Mar, 2023",
+      "reminder":"19 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 7
     },
     {
-      "status": true,
-      "data": "Test 5",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 8
     },
     {
-      "status": false,
-      "data": "Test 6",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 9
     },
     {
-      "status": false,
-      "data": "Test4",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
       "id": 10
     },
     {
-      "status": false,
-      "data": "Test6",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 11
     },
     {
-      "status": false,
-      "data": "Test7",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 12
     },
     {
-      "status": false,
-      "data": "Test9",
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
       "id": 13
+    },
+    {
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":false,
+      "id": 14
+    },
+    {
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
+      "id": 15
+    },
+    {
+      "task":"Complete this assignment",
+      "completed":false,
+      "dueDate":"18 Mar, 2023",
+      "reminder":"18 Mar, 2023",
+      "file":"1 file",
+      "note":"1 note",
+      "markedImportant":true,
+      "id": 16
     }
   ]
 }
