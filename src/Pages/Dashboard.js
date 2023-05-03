@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import DashboardStyles from "./Styles/Dashboard.module.css";
-import { AiOutlineStar, AiFillEdit } from "react-icons/ai";
-import { MdDelete } from "react-icons/md";
+// import { AiOutlineStar, AiFillEdit } from "react-icons/ai";
+// import { MdDelete } from "react-icons/md";
 import TaskCard from "../Components/TaskCard";
 const Dashboard = () => {
   let [TaskDataArray, setTaskDataArray] = useState([]);
@@ -10,7 +10,8 @@ const Dashboard = () => {
     fetch(url).then((res)=>{
       return res.json();
     }).then((val)=>{
-      setTaskDataArray(val)
+      let sortedDateArray = val.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate))
+      setTaskDataArray(sortedDateArray)
     })
   },[])
   console.log(TaskDataArray)

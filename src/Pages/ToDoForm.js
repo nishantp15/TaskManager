@@ -29,7 +29,7 @@ function ToDoForm() {
     incomplete: "",
   });
 
-  let [time, setTime] = useState('');
+  // let [time, setTime] = useState('');
 
   function TaskInput(e) {
     setData({ ...initData, data: e.target.value });
