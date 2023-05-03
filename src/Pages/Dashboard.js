@@ -1,74 +1,65 @@
 import React, { useEffect, useState } from "react";
 import DashboardStyles from "./Styles/Dashboard.module.css";
-// import { AiOutlineStar, AiFillEdit } from "react-icons/ai";
-// import { MdDelete } from "react-icons/md";
+import AddTaskAndGeneralDisplay from "../Components/AddTaskAndGeneralDisplay";
 import TaskCard from "../Components/TaskCard";
+
 const Dashboard = () => {
   let [TaskDataArray, setTaskDataArray] = useState([]);
-  useEffect(()=>{
+  let [isUpdated, setIsUpdated] = useState(false)
+
+  useEffect(() => {
     let url = `http://localhost:3001/todo`;
-    fetch(url).then((res)=>{
-      return res.json();
-    }).then((val)=>{
-      let sortedDateArray = val.sort((a,b)=>new Date(a.dueDate)-new Date(b.dueDate))
-      setTaskDataArray(sortedDateArray)
-    })
-  },[])
-  console.log(TaskDataArray)
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((val) => {
+        let sortedDateArray = val.sort(
+          (a, b) => new Date(a.dueDate) - new Date(b.dueDate)
+        );
+        setTaskDataArray(sortedDateArray);
+      });
+  }, [isUpdated]);
+
+  function updateTaskDisplayData(data){
+      setTaskDataArray(data);
+  }
+
+  function getData(url){
+    fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((val) => {
+        let sortedDateArray = val.sort(
+          (a, b) => new Date(a.dueDate) - new Date(b.dueDate)
+        );
+        setTaskDataArray(sortedDateArray);
+      });
+  }
+
+  // console.log(TaskDataArray);
+
   return (
     <div className={DashboardStyles.DashboardContainerMain}>
       <div className={DashboardStyles.DashboardContainerLeft}>
-        <div className={DashboardStyles.DashboardUserControlMain}>
-          <div className={DashboardStyles.UserNameAndGeneralDetailsBox}>
-            <div className={DashboardStyles.UserNameBox}>
-              <h2>Hi, Nishant</h2>
-            </div>
-            <div className={DashboardStyles.DateTimeAndTempDisplayBox}>
-              <div className={DashboardStyles.DateAndTimeDisplayBox}>
-                <p>23:52:08</p>
-                <p>20 Apr, 2023</p>
-              </div>
-              <div className={DashboardStyles.TempDisplayBox}>
-                <div>
-                  <img
-                    src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png"
-                    alt=""
-                  />
-                </div>
-                <p>23⁰C</p>
-              </div>
-            </div>
-          </div>
-          <div className={DashboardStyles.AddTaskAndOtherDetailsBox}>
-            <div className={DashboardStyles.AddTaskAndOtherDetailsLeftBox}>
-              <input type="text" placeholder="Add a task" />
-              <textarea name="" id="" placeholder="Add a note..."></textarea>
-            </div>
-            <div className={DashboardStyles.AddTaskAndOtherDetailsRightBox}>
-              <button>Add due date</button>
-              <button>Set reminder</button>
-              <button>Add a file</button>
-              <select name="" id="">
-                <option value="">Set priority</option>
-              </select>
-              <button className={DashboardStyles.AddTaskButton}>
-                Add task
-              </button>
-            </div>
-          </div>
-        </div>
+        
+        {/* 1. Add Task */}
+        <AddTaskAndGeneralDisplay updateAddedTask = {updateTaskDisplayData} />
+
+        {/* 2. Task Box  */}
         <div className={DashboardStyles.DashboardTaskDisplayMainBox}>
           <div className={DashboardStyles.TaskDisplayHeader}>
             <h3>Tasks</h3>
           </div>
           <div className={DashboardStyles.TaskDisplayBox}>
             {/* Task Card */}
-            {TaskDataArray.map((ele,ind)=>{
-              return <TaskCard key={ele.id} taskData={ele} />
+            {TaskDataArray.map((ele, ind) => {
+              return <TaskCard key={ele.id} taskData={ele} />;
             })}
-            
-          
           </div>
+
+          {/* 3. Pagination */}
           <div className={DashboardStyles.PaginationBox}>
             <button>Prev</button>
             <button>1</button>
@@ -79,6 +70,8 @@ const Dashboard = () => {
             <button>Next</button>
           </div>
         </div>
+
+        {/* 4. Completed Tasks  */}
       </div>
       <div className={DashboardStyles.DashboardContainerRight}>
         <div className={DashboardStyles.DataAndStatDisplay}></div>

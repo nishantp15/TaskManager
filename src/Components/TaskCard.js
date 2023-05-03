@@ -8,9 +8,9 @@ import { IoAttachSharp } from "react-icons/io5";
 import { FaRegCheckCircle, FaRegCircle } from "react-icons/fa";
 
 const TaskCard = ({ taskData={} }) => {
-  console.log(taskData)
+  // console.log(taskData)
   let a = new Date("02 Mar, 2023");
-  console.log(a.toDateString())
+  // console.log(a.toDateString())
   return (
     <div className={TaskCardStyle.TaskCard}>
       <div className={TaskCardStyle.TaskCompletedMarkerBox}>
