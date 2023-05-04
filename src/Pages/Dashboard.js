@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import DashboardStyles from "./Styles/Dashboard.module.css";
 import AddTaskAndGeneralDisplay from "../Components/AddTaskAndGeneralDisplay";
 import TaskCard from "../Components/TaskCard";
+import StatsDisplay from "../Components/StatsDisplay";
 
 const Dashboard = () => {
   let [TaskDataArray, setTaskDataArray] = useState([]);
-  let [isUpdated, setIsUpdated] = useState(false)
+  let [isUpdated, setIsUpdated] = useState(false);
 
   useEffect(() => {
     let url = `http://localhost:3001/todo`;
@@ -21,11 +22,11 @@ const Dashboard = () => {
       });
   }, [isUpdated]);
 
-  function updateTaskDisplayData(data){
-      setTaskDataArray(data);
+  function updateTaskDisplayData(data) {
+    setTaskDataArray(data);
   }
 
-  function getData(url){
+  function getData(url) {
     fetch(url)
       .then((res) => {
         return res.json();
@@ -37,15 +38,17 @@ const Dashboard = () => {
         setTaskDataArray(sortedDateArray);
       });
   }
-  console.log(5)
+  console.log(5);
   // console.log(TaskDataArray);
 
   return (
     <div className={DashboardStyles.DashboardContainerMain}>
       <div className={DashboardStyles.DashboardContainerLeft}>
-        
         {/* 1. Add Task */}
-        <AddTaskAndGeneralDisplay updateAddedTask = {updateTaskDisplayData} TaskDataArray = {TaskDataArray}/>
+        <AddTaskAndGeneralDisplay
+          updateAddedTask={updateTaskDisplayData}
+          TaskDataArray={TaskDataArray}
+        />
 
         {/* 2. Task Box  */}
         <div className={DashboardStyles.DashboardTaskDisplayMainBox}>
@@ -55,7 +58,14 @@ const Dashboard = () => {
           <div className={DashboardStyles.TaskDisplayBox}>
             {/* Task Card */}
             {TaskDataArray.map((ele, ind) => {
-              return <TaskCard key={ele.id} taskData={ele} getData = {getData} updated = {(val)=>setIsUpdated(val)}/>;
+              return (
+                <TaskCard
+                  key={ele.id}
+                  taskData={ele}
+                  getData={getData}
+                  updated={(val) => setIsUpdated(val)}
+                />
+              );
             })}
           </div>
 
@@ -74,7 +84,7 @@ const Dashboard = () => {
         {/* 4. Completed Tasks  */}
       </div>
       <div className={DashboardStyles.DashboardContainerRight}>
-        <div className={DashboardStyles.DataAndStatDisplay}></div>
+        <StatsDisplay />
       </div>
     </div>
   );

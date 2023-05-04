@@ -1,0 +1,10 @@
+.StatsDisplay {
+  border: 1px solid red;
+  width: 100%;
+  border-radius: 10px;
+  height: 22vw;
+  background-color: rgb(41, 40, 73);
+  padding: 5px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
