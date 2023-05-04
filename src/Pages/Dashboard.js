@@ -37,7 +37,7 @@ const Dashboard = () => {
         setTaskDataArray(sortedDateArray);
       });
   }
-
+  console.log(5)
   // console.log(TaskDataArray);
 
   return (
@@ -45,7 +45,7 @@ const Dashboard = () => {
       <div className={DashboardStyles.DashboardContainerLeft}>
         
         {/* 1. Add Task */}
-        <AddTaskAndGeneralDisplay updateAddedTask = {updateTaskDisplayData} />
+        <AddTaskAndGeneralDisplay updateAddedTask = {updateTaskDisplayData} TaskDataArray = {TaskDataArray}/>
 
         {/* 2. Task Box  */}
         <div className={DashboardStyles.DashboardTaskDisplayMainBox}>

@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import TaskCardStyle from "./Styles/TaskCard.module.css";
-import { AiOutlineStar,AiFillStar, AiFillEdit } from "react-icons/ai";
+import { AiOutlineStar, AiFillStar, AiFillEdit } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import { BsDot } from "react-icons/bs";
 import { CiBellOn, CiStickyNote } from "react-icons/ci";
 import { IoAttachSharp } from "react-icons/io5";
 import { FaRegCheckCircle, FaRegCircle } from "react-icons/fa";
 
-const TaskCard = ({ taskData={} }) => {
-  // console.log(taskData)
-  let a = new Date("02 Mar, 2023");
-  // console.log(a.toDateString())
+const TaskCard = ({ taskData = {} }) => {
+  let [isMarkedImportant, setIsMarkedImportant] = useState(
+    taskData.markedImportant
+  );
+  // let a = new Date("02 Mar, 2023");
+  let url = `http://localhost:3001/todo/`;
+  async function updateTask(id, value) {
+    try {
+      const response = await fetch(url + id, {
+        method: "PATCH",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ markedImportant: value }),
+      });
+      const responseData = await response.json();
+      // console.log(responseData);
+      if (response.ok) {
+        setIsMarkedImportant(value);
+      } else {
+        alert("Some error occured");
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
+
   return (
     <div className={TaskCardStyle.TaskCard}>
       <div className={TaskCardStyle.TaskCompletedMarkerBox}>
@@ -35,7 +56,17 @@ const TaskCard = ({ taskData={} }) => {
         </div>
       </div>
       <div className={TaskCardStyle.TaskMarkImpOrDeleteActions}>
-        {taskData.markedImportant ? <AiFillStar className={TaskCardStyle.MarkImportant}/>:<AiOutlineStar className={TaskCardStyle.MarkImportant}/>}
+        {isMarkedImportant ? (
+          <AiFillStar
+            onClick={() => updateTask(taskData.id, false)}
+            className={TaskCardStyle.MarkImportant}
+          />
+        ) : (
+          <AiOutlineStar
+            onClick={() => updateTask(taskData.id, true)}
+            className={TaskCardStyle.MarkImportant}
+          />
+        )}
         <AiFillEdit className={TaskCardStyle.EditTask} />
         <MdDelete className={TaskCardStyle.DeleteTask} />
       </div>

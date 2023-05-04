@@ -1,28 +1,52 @@
 import React, { useState } from "react";
 import AddTaskBoxStyles from "./Styles/AddTaskAndGeneralDisplay.module.css";
-import { BsXLg } from "react-icons/bs";
-const AddTaskAndGeneralDisplay = ({updateAddedTask}) => {
-  let initFormDetails = {
+// import { BsXLg } from "react-icons/bs";
+
+
+const AddTaskAndGeneralDisplay = ({ updateAddedTask, TaskDataArray }) => {
+  
+    let initFormDetails = {
     task: "",
     completed: false,
     dueDate: "18 Mar, 2023",
     reminder: "18 Mar, 2023",
     file: "1 file",
     note: "",
-    markedImportant: true,
+    markedImportant: false,
   };
 
-  let [addTaskData,setAddTaskData] = useState(initFormDetails)
-  
-  function getFormInput(e){
-    let {name, value} = e.target
-    setAddTaskData({...addTaskData,[name]:value})
+  let [addTaskData, setAddTaskData] = useState(initFormDetails);
+
+  function getFormInput(e) {
+    let { name, value } = e.target;
+    setAddTaskData({ ...addTaskData, [name]: value });
     console.log(addTaskData);
   }
 
-  console.log(updateAddedTask)
-  
-  function AddTask() {}
+  async function AddTask() {
+    let url = `http://localhost:3001/todo`;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(addTaskData),
+      });
+
+      const data = await response.json();
+      console.log(data)
+      console.log(response.headers);
+      if (response.ok) {
+        updateAddedTask((prev) => [data, ...prev]);
+        alert("Task added successfully");
+      } else {
+        alert("Some error occured");
+      }
+
+    } catch (err) {
+      console.log(err.message);
+    }
+  }
 
   return (
     <div className={AddTaskBoxStyles.DashboardUserControlMain}>
@@ -48,8 +72,18 @@ const AddTaskAndGeneralDisplay = ({updateAddedTask}) => {
       </div>
       <div className={AddTaskBoxStyles.AddTaskAndOtherDetailsBox}>
         <div className={AddTaskBoxStyles.AddTaskAndOtherDetailsLeftBox}>
-          <input type="text" placeholder="Add a task" name="task" onChange={getFormInput} />
-          <textarea name="note" id="" placeholder="Add a note..." onChange={getFormInput}></textarea>
+          <input
+            type="text"
+            placeholder="Add a task"
+            name="task"
+            onChange={getFormInput}
+          />
+          <textarea
+            name="note"
+            id=""
+            placeholder="Add a note..."
+            onChange={getFormInput}
+          ></textarea>
         </div>
         <div className={AddTaskBoxStyles.AddTaskAndOtherDetailsRightBox}>
           <button>Add due date</button>
