@@ -3,7 +3,9 @@ import AddTaskBoxStyles from "./Styles/AddTaskAndGeneralDisplay.module.css";
 // import { BsXLg } from "react-icons/bs";
 
 
-const AddTaskAndGeneralDisplay = ({ updateAddedTask, TaskDataArray }) => {
+const AddTaskAndGeneralDisplay = ({ updateAddedTask, TaskDataArray = [] }) => {
+    
+    let url = `http://localhost:3001/todo`;
   
     let initFormDetails = {
     task: "",
@@ -18,13 +20,13 @@ const AddTaskAndGeneralDisplay = ({ updateAddedTask, TaskDataArray }) => {
   let [addTaskData, setAddTaskData] = useState(initFormDetails);
 
   function getFormInput(e) {
+
     let { name, value } = e.target;
     setAddTaskData({ ...addTaskData, [name]: value });
-    console.log(addTaskData);
+    
   }
 
   async function AddTask() {
-    let url = `http://localhost:3001/todo`;
 
     try {
       const response = await fetch(url, {
@@ -47,6 +49,7 @@ const AddTaskAndGeneralDisplay = ({ updateAddedTask, TaskDataArray }) => {
       console.log(err.message);
     }
   }
+
 
   return (
     <div className={AddTaskBoxStyles.DashboardUserControlMain}>

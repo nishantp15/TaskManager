@@ -55,7 +55,7 @@ const Dashboard = () => {
           <div className={DashboardStyles.TaskDisplayBox}>
             {/* Task Card */}
             {TaskDataArray.map((ele, ind) => {
-              return <TaskCard key={ele.id} taskData={ele} />;
+              return <TaskCard key={ele.id} taskData={ele} getData = {getData} updated = {(val)=>setIsUpdated(val)}/>;
             })}
           </div>
 

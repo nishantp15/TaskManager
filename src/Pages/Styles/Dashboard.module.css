@@ -31,7 +31,8 @@
 
 
 .DashboardTaskDisplayMainBox {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   width: 100%;

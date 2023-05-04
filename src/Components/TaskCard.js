@@ -7,10 +7,9 @@ import { CiBellOn, CiStickyNote } from "react-icons/ci";
 import { IoAttachSharp } from "react-icons/io5";
 import { FaRegCheckCircle, FaRegCircle } from "react-icons/fa";
 
-const TaskCard = ({ taskData = {} }) => {
-  let [isMarkedImportant, setIsMarkedImportant] = useState(
-    taskData.markedImportant
-  );
+const TaskCard = ({ taskData = {}, getData, updated}) => {
+  let [isMarkedImportant, setIsMarkedImportant] = useState(taskData.markedImportant);
+  let [containsNote, setContainsNote] = useState(taskData.note !=="" ? true : false);
   // let a = new Date("02 Mar, 2023");
   let url = `http://localhost:3001/todo/`;
   async function updateTask(id, value) {
@@ -32,8 +31,29 @@ const TaskCard = ({ taskData = {} }) => {
     }
   }
 
+  
+  async function deleteTask(id){
+    try{
+      // updated(true)
+        const response = await fetch(url+id,{
+            method:"DELETE"
+        })
+        
+        const responseData = await response.json();
+        console.log(responseData, response.ok)
+        if(response.ok){
+          getData(url)
+        }else{
+          alert("Something went wrong")
+        }
+
+    }catch(err){
+        console.error(err.message)
+    }
+  }
+
   return (
-    <div className={TaskCardStyle.TaskCard}>
+    <div className={`${TaskCardStyle.TaskCard} ${TaskCardStyle.Animation}`}>
       <div className={TaskCardStyle.TaskCompletedMarkerBox}>
         <FaRegCircle className={TaskCardStyle.MarkAsCompletedWithoutCheck} />
         <FaRegCheckCircle className={TaskCardStyle.MarkAsCompletedWithCheck} />
@@ -51,8 +71,8 @@ const TaskCard = ({ taskData = {} }) => {
           <IoAttachSharp className={TaskCardStyle.AttachmentIcon} />
           <p>{taskData.file}</p>
           <BsDot className={TaskCardStyle.CardDot} />
-          <CiStickyNote className={TaskCardStyle.NoteIcon} />
-          <p>{taskData.note}</p>
+          <CiStickyNote className={containsNote ? TaskCardStyle.NoteIcon : TaskCardStyle.HideNoteIcon} />
+          <p>{containsNote ? "1 Note" : ""}</p>
         </div>
       </div>
       <div className={TaskCardStyle.TaskMarkImpOrDeleteActions}>
@@ -68,7 +88,7 @@ const TaskCard = ({ taskData = {} }) => {
           />
         )}
         <AiFillEdit className={TaskCardStyle.EditTask} />
-        <MdDelete className={TaskCardStyle.DeleteTask} />
+        <MdDelete onClick={()=>deleteTask(taskData.id)} className={TaskCardStyle.DeleteTask} />
       </div>
     </div>
   );

@@ -8,6 +8,24 @@
   padding: 2px 0px;
   background-color: rgb(64, 62, 86);
   border-radius: 5px;
+  /* transition: all .4s ; */
+}
+
+.Animation{
+  animation: list-display .5s ease-out forwards;
+}
+
+@keyframes list-display {
+  0% {
+    /* transition: all; */
+    transform: translateY(20px);
+    opacity: 0;
+  }
+ 
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .TaskCompletedMarkerBox {
@@ -94,6 +112,10 @@
   margin: 0;
   font-size: large;
   color: rgb(124, 210, 218);
+}
+
+.HideNoteIcon {
+  display: none;
 }
 
 .TaskMarkImpOrDeleteActions {
